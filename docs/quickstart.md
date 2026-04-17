@@ -91,6 +91,26 @@ If you are not using the bundled `mygame/`, add `--game-dir /path/to/your/game` 
 
 The workflow is not restricted to Ollama.
 
+### Minimum Model Requirements
+
+Any replacement model should satisfy these baseline requirements:
+
+- Follows short instruction prompts reliably without adding long meta commentary
+- Returns strict JSON when asked, without markdown code fences
+- Produces short action strings instead of essays
+- Handles noisy room text and parser feedback without collapsing into refusal or generic chat behavior
+- Responds consistently within the configured timeout window, which defaults to 30 seconds
+
+If a model fails those basics, the workflow will degrade quickly even if the raw language quality looks good.
+
+### Compatibility Status
+
+- Validated baseline: `qwen2.5:7b` via Ollama
+- Configured fallback candidates: `qwen2.5:3b`, `llama3.2:3b`
+- Documented API example: `gpt-4.1-mini` via an OpenAI-compatible chat endpoint
+
+Only the validated baseline should be treated as a known-good reference configuration. The fallback candidates and cloud example are supported configuration shapes, not a promise that they have been equally exercised on this repository.
+
 ### Local Ollama
 
 ```bash
@@ -109,6 +129,23 @@ export WAGENT_MODEL_API_KEY=replace-me
 ```
 
 Backward compatibility is preserved for older local setups that still export `OLLAMA_MODEL` and `OLLAMA_API`.
+
+### Sanity Test Before Running Bots
+
+Before you start the full workflow with a new model, run:
+
+```bash
+source venv/bin/activate
+python model_sanity_check.py --print-response
+```
+
+Expected result:
+
+- `MODEL SANITY CHECK PASSED`
+- a short action such as `look`
+- valid JSON output without markdown fences
+
+If it fails, fix the model endpoint or switch to a more instruction-stable model before running `bots.py`, `scanner.py`, or `runner.py`.
 
 ## 5. Run The Workflow
 

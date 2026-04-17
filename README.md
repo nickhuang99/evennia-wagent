@@ -35,6 +35,13 @@ If you only want to run this project, you do not need to clone Evennia separatel
 - Portable repository-relative bootstrap via `start_evennia.sh`
 - Public-repo-safe examples for environment variables and account-pool setup
 
+## Model Guidance
+
+- Known-good baseline: `qwen2.5:7b` via Ollama
+- Supported API shapes: Ollama generate endpoint and OpenAI-compatible chat completions
+- Before adopting a new model, run `python model_sanity_check.py --print-response`
+- A compatible model must follow short instructions, return strict JSON when asked, and emit short action strings instead of chatty prose
+
 ## Quick Start
 
 1. Create a Python environment and install dependencies.
@@ -187,6 +194,7 @@ If any of those are no longer true, update `docs/current-state.md`, `docs/recove
 ## Documentation Map
 
 - `docs/quickstart.md`: first-run setup, credentials, model provider configuration, and launch commands
+- `model_sanity_check.py`: connectivity and JSON-output sanity check for a candidate model endpoint
 - `docs/architecture.md`: current system model and workflow
 - `docs/development-principles.md`: what to do and what not to do when modifying the system
 - `WAGENT_DESIGN.md`: design note, workflow intent, and SOP for scanner/runner/orchestrator frontier expansion
