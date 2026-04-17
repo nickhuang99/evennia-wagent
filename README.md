@@ -82,6 +82,13 @@ evennia collectstatic --noinput
 evennia start
 ```
 
+If `evennia migrate` prints a warning like `Your models in app(s) ... have changes that are not yet reflected in a migration`, treat it as non-blocking in this repository as long as:
+
+- `evennia migrate` exits successfully
+- `evennia check` reports no issues
+
+Do not run `makemigrations` just to silence that warning unless you are intentionally changing Django/Evennia models.
+
 4. Run the workflow from the repository root.
 
 ```bash

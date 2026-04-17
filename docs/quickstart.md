@@ -67,6 +67,19 @@ evennia collectstatic --noinput
 evennia start
 ```
 
+In this repository, `evennia migrate` may print a warning about models in `accounts`, `comms`, `objects`, or `scripts` having changes not reflected in a migration. That warning is currently non-blocking if:
+
+- `evennia migrate` exits with code 0
+- `evennia check` reports `System check identified no issues`
+
+If you want to confirm, run:
+
+```bash
+evennia check
+```
+
+Do not run `makemigrations` just to suppress that warning unless you are intentionally editing Django/Evennia models and want to maintain new migrations.
+
 The bundled `mygame/` directory is the default Evennia game directory shipped with this repository. The live Wagent workflow remains in the repository root and can also target another Evennia game directory when you set `WAGENT_GAME_DIR`.
 
 ## 3. Configure Credentials
