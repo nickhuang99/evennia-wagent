@@ -64,6 +64,19 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
+If installation fails while downloading `cryptography` or another large wheel, that is usually a network problem rather than an Evennia dependency problem. In that case, retry with a longer timeout and more retries:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install --default-timeout=100 --retries 10 --resume-retries 20 -r requirements.txt
+```
+
+If your connection to the default PyPI host is unstable, use a closer mirror for the install step, for example:
+
+```bash
+python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --default-timeout=100 --retries 10 --resume-retries 20 -r requirements.txt
+```
+
 Or use:
 
 ```bash
