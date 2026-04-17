@@ -1,0 +1,233 @@
+{
+  "format": "room-exits-v2",
+  "rooms": {
+    "the old bridge": {
+      "exits": {
+        "hole into cliff || underground passages": {
+          "action": "hole into cliff",
+          "to": "underground passages",
+          "recipe": [
+            "hole into cliff"
+          ]
+        },
+        "east || ruined gatehouse": {
+          "action": "east",
+          "to": "ruined gatehouse",
+          "recipe": [
+            "east"
+          ]
+        },
+        "west || cliff by the coast": {
+          "action": "west",
+          "to": "cliff by the coast",
+          "recipe": [
+            "west"
+          ]
+        }
+      }
+    },
+    "cliff by the coast": {
+      "exits": {
+        "old bridge || the old bridge": {
+          "action": "old bridge",
+          "to": "the old bridge",
+          "recipe": [
+            "old bridge"
+          ]
+        }
+      }
+    },
+    "underground passages": {
+      "exits": {
+        "climb the chain || cliff by the coast": {
+          "action": "climb the chain",
+          "to": "cliff by the coast",
+          "recipe": [
+            "climb the chain"
+          ]
+        }
+      }
+    },
+    "protruding ledge": {
+      "exits": {
+        "hole into cliff || underground passages": {
+          "action": "hole into cliff",
+          "to": "underground passages",
+          "recipe": [
+            "hole into cliff"
+          ]
+        }
+      }
+    },
+    "dark cell": {
+      "exits": {
+        "root-covered wall || underground passages": {
+          "action": "root-covered wall",
+          "to": "underground passages",
+          "recipe": [
+            "shift blue left",
+            "shift red right",
+            "shift green up",
+            "shift yellow down",
+            "press button",
+            "root-covered wall"
+          ]
+        }
+      }
+    },
+    "ruined gatehouse": {
+      "exits": {
+        "standing archway || along inner wall": {
+          "action": "standing archway",
+          "to": "along inner wall",
+          "recipe": [
+            "standing archway"
+          ]
+        },
+        "castle corner || corner of castle ruins": {
+          "action": "castle corner",
+          "to": "corner of castle ruins",
+          "recipe": [
+            "castle corner"
+          ]
+        },
+        "bridge over the abyss || the old bridge": {
+          "action": "bridge over the abyss",
+          "to": "the old bridge",
+          "recipe": [
+            "bridge over the abyss"
+          ]
+        }
+      }
+    },
+    "along inner wall": {
+      "exits": {
+        "ruined gatehouse || ruined gatehouse": {
+          "action": "ruined gatehouse",
+          "to": "ruined gatehouse",
+          "recipe": [
+            "ruined gatehouse"
+          ]
+        },
+        "overgrown courtyard || overgrown courtyard": {
+          "action": "overgrown courtyard",
+          "to": "overgrown courtyard",
+          "recipe": [
+            "overgrown courtyard"
+          ]
+        }
+      }
+    },
+    "corner of castle ruins": {
+      "exits": {
+        "gatehouse || ruined gatehouse": {
+          "action": "gatehouse",
+          "to": "ruined gatehouse",
+          "recipe": [
+            "gatehouse"
+          ]
+        },
+        "courtyard || overgrown courtyard": {
+          "action": "courtyard",
+          "to": "overgrown courtyard",
+          "recipe": [
+            "courtyard"
+          ]
+        }
+      }
+    },
+    "overgrown courtyard": {
+      "exits": {
+        "castle corner || corner of castle ruins": {
+          "action": "castle corner",
+          "to": "corner of castle ruins",
+          "recipe": [
+            "castle corner"
+          ]
+        },
+        "along inner wall || along inner wall": {
+          "action": "along inner wall",
+          "to": "along inner wall",
+          "recipe": [
+            "along inner wall"
+          ]
+        },
+        "ruined temple || the ruined temple": {
+          "action": "ruined temple",
+          "to": "the ruined temple",
+          "recipe": [
+            "ruined temple"
+          ]
+        }
+      }
+    },
+    "the ruined temple": {
+      "exits": {
+        "overgrown courtyard || overgrown courtyard": {
+          "action": "overgrown courtyard",
+          "to": "overgrown courtyard",
+          "recipe": [
+            "overgrown courtyard"
+          ]
+        },
+        "stairs down || antechamber": {
+          "action": "stairs down",
+          "to": "antechamber",
+          "recipe": [
+            "stairs down"
+          ]
+        }
+      }
+    },
+    "antechamber": {
+      "exits": {
+        "blue bird tomb || dark cell": {
+          "action": "blue bird tomb",
+          "to": "dark cell",
+          "recipe": [
+            "blue bird tomb"
+          ]
+        },
+        "tomb of woman on horse || dark cell": {
+          "action": "tomb of woman on horse",
+          "to": "dark cell",
+          "recipe": [
+            "tomb of woman on horse"
+          ]
+        },
+        "tomb of the shield || dark cell": {
+          "action": "tomb of the shield",
+          "to": "dark cell",
+          "recipe": [
+            "tomb of the shield"
+          ]
+        },
+        "tomb of the hero || dark cell": {
+          "action": "tomb of the hero",
+          "to": "dark cell",
+          "recipe": [
+            "tomb of the hero"
+          ]
+        },
+        "tomb of the crowned queen || dark cell": {
+          "action": "tomb of the crowned queen",
+          "to": "dark cell",
+          "recipe": [
+            "tomb of the crowned queen"
+          ]
+        }
+      }
+    },
+    "intro": {
+      "exits": {
+        "begin adventure || cliff by the coast": {
+          "action": "begin adventure",
+          "to": "cliff by the coast",
+          "recipe": [
+            "begin adventure"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "failed_actions_by_room": {
+    "cliff by the coast": [
+      "west",
+      "old well",
+      "enter old well",
+      "climb chain",
+      "climb down chain",
+      "pull chain",
+      "enter well",
+      "enter hole",
+      "down",
+      "touch old well",
+      "touch wooden sign",
+      "touch sign",
+      "touch old tree",
+      "touch gnarled old",
+      "touch tree",
+      "climb the chain",
+      "the chain",
+      "northern path",
+      "climb old well",
+      "climb down well",
+      "down well",
+      "enter",
+      "help",
+      "climb the well",
+      "the well",
+      "read obelisk",
+      "touch obelisk",
+      "touch well"
+    ],
+    "dark cell": [
+      "help",
+      "begin adventure",
+      "old bridge",
+      "shift"
+    ],
+    "the old bridge": [
+      "old bridge",
+      "standing archway"
+    ],
+    "corner of castle ruins": [
+      "behind obelisk",
+      "past obelisk",
+      "read obelisk",
+      "touch obelisk",
+      "read foggy tentacles",
+      "read ghostly apparition",
+      "touch ghostly apparition"
+    ]
+  }
+}

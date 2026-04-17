@@ -1,0 +1,17 @@
+{
+  "format": "wagent-account-pool-v1",
+  "host": "127.0.0.1",
+  "port": 4000,
+  "accounts": [
+    {
+      "label": "r1",
+      "user": "replace-me",
+      "password": "replace-me"
+    },
+    {
+      "label": "r2",
+      "user": "replace-me",
+      "password": "replace-me"
+    }
+  ]
+}

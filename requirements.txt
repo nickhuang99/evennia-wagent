@@ -1,0 +1,2 @@
+evennia==4.5.0
+requests>=2.32,<3

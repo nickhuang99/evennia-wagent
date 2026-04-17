@@ -1,0 +1,707 @@
+{
+  "destinations": {
+    "the old bridge": {
+      "hops": {
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776352483,
+          "learned_from_role": "runner"
+        },
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776352483,
+          "learned_from_role": "runner"
+        },
+        "dark cell": {
+          "action": "root-covered wall",
+          "to_room": "underground passages",
+          "updated_ts": 1776296202,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "underground passages",
+          "action": "climb the chain",
+          "to_room": "cliff by the coast"
+        },
+        {
+          "from_room": "cliff by the coast",
+          "action": "old bridge",
+          "to_room": "the old bridge"
+        }
+      ],
+      "updated_ts": 1776384925
+    },
+    "ruined gatehouse": {
+      "hops": {
+        "the old bridge": {
+          "action": "east",
+          "to_room": "ruined gatehouse",
+          "updated_ts": 1776384925,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776352483,
+          "learned_from_role": "runner"
+        },
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776352483,
+          "learned_from_role": "runner"
+        },
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "dark cell": {
+          "action": "root-covered wall",
+          "to_room": "underground passages",
+          "updated_ts": 1776296202,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "the old bridge",
+          "action": "east",
+          "to_room": "ruined gatehouse"
+        }
+      ],
+      "updated_ts": 1776384925
+    },
+    "along inner wall": {
+      "hops": {
+        "the old bridge": {
+          "action": "east",
+          "to_room": "ruined gatehouse",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "ruined gatehouse": {
+          "action": "standing archway",
+          "to_room": "along inner wall",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "dark cell": {
+          "action": "root-covered wall",
+          "to_room": "underground passages",
+          "updated_ts": 1776296202,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "cliff by the coast",
+          "action": "old bridge",
+          "to_room": "the old bridge"
+        },
+        {
+          "from_room": "the old bridge",
+          "action": "east",
+          "to_room": "ruined gatehouse"
+        },
+        {
+          "from_room": "ruined gatehouse",
+          "action": "standing archway",
+          "to_room": "along inner wall"
+        }
+      ],
+      "updated_ts": 1776335444
+    },
+    "overgrown courtyard": {
+      "hops": {
+        "the old bridge": {
+          "action": "east",
+          "to_room": "ruined gatehouse",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "ruined gatehouse": {
+          "action": "standing archway",
+          "to_room": "along inner wall",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "along inner wall": {
+          "action": "overgrown courtyard",
+          "to_room": "overgrown courtyard",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "dark cell": {
+          "action": "root-covered wall",
+          "to_room": "underground passages",
+          "updated_ts": 1776296202,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "cliff by the coast",
+          "action": "old bridge",
+          "to_room": "the old bridge"
+        },
+        {
+          "from_room": "the old bridge",
+          "action": "east",
+          "to_room": "ruined gatehouse"
+        },
+        {
+          "from_room": "ruined gatehouse",
+          "action": "standing archway",
+          "to_room": "along inner wall"
+        },
+        {
+          "from_room": "along inner wall",
+          "action": "overgrown courtyard",
+          "to_room": "overgrown courtyard"
+        }
+      ],
+      "updated_ts": 1776335444
+    },
+    "corner of castle ruins": {
+      "hops": {
+        "ruined gatehouse": {
+          "action": "castle corner",
+          "to_room": "corner of castle ruins",
+          "updated_ts": 1776384925,
+          "learned_from_role": "runner"
+        },
+        "overgrown courtyard": {
+          "action": "castle corner",
+          "to_room": "corner of castle ruins",
+          "updated_ts": 1776284253,
+          "learned_from_role": "runner"
+        },
+        "along inner wall": {
+          "action": "overgrown courtyard",
+          "to_room": "overgrown courtyard",
+          "updated_ts": 1776284253,
+          "learned_from_role": "runner"
+        },
+        "the old bridge": {
+          "action": "east",
+          "to_room": "ruined gatehouse",
+          "updated_ts": 1776384925,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776352483,
+          "learned_from_role": "runner"
+        },
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776352483,
+          "learned_from_role": "runner"
+        },
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "dark cell": {
+          "action": "root-covered wall",
+          "to_room": "underground passages",
+          "updated_ts": 1776287408,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "the old bridge",
+          "action": "east",
+          "to_room": "ruined gatehouse"
+        },
+        {
+          "from_room": "ruined gatehouse",
+          "action": "castle corner",
+          "to_room": "corner of castle ruins"
+        }
+      ],
+      "updated_ts": 1776384925
+    },
+    "the ruined temple": {
+      "hops": {
+        "the old bridge": {
+          "action": "east",
+          "to_room": "ruined gatehouse",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "ruined gatehouse": {
+          "action": "standing archway",
+          "to_room": "along inner wall",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "along inner wall": {
+          "action": "overgrown courtyard",
+          "to_room": "overgrown courtyard",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "overgrown courtyard": {
+          "action": "ruined temple",
+          "to_room": "the ruined temple",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "dark cell": {
+          "action": "root-covered wall",
+          "to_room": "underground passages",
+          "updated_ts": 1776296202,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "cliff by the coast",
+          "action": "old bridge",
+          "to_room": "the old bridge"
+        },
+        {
+          "from_room": "the old bridge",
+          "action": "east",
+          "to_room": "ruined gatehouse"
+        },
+        {
+          "from_room": "ruined gatehouse",
+          "action": "standing archway",
+          "to_room": "along inner wall"
+        },
+        {
+          "from_room": "along inner wall",
+          "action": "overgrown courtyard",
+          "to_room": "overgrown courtyard"
+        },
+        {
+          "from_room": "overgrown courtyard",
+          "action": "ruined temple",
+          "to_room": "the ruined temple"
+        }
+      ],
+      "updated_ts": 1776335444
+    },
+    "antechamber": {
+      "hops": {
+        "the old bridge": {
+          "action": "east",
+          "to_room": "ruined gatehouse",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "ruined gatehouse": {
+          "action": "standing archway",
+          "to_room": "along inner wall",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "along inner wall": {
+          "action": "overgrown courtyard",
+          "to_room": "overgrown courtyard",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "overgrown courtyard": {
+          "action": "ruined temple",
+          "to_room": "the ruined temple",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "the ruined temple": {
+          "action": "stairs down",
+          "to_room": "antechamber",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "dark cell": {
+          "action": "root-covered wall",
+          "to_room": "underground passages",
+          "updated_ts": 1776296202,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "cliff by the coast",
+          "action": "old bridge",
+          "to_room": "the old bridge"
+        },
+        {
+          "from_room": "the old bridge",
+          "action": "east",
+          "to_room": "ruined gatehouse"
+        },
+        {
+          "from_room": "ruined gatehouse",
+          "action": "standing archway",
+          "to_room": "along inner wall"
+        },
+        {
+          "from_room": "along inner wall",
+          "action": "overgrown courtyard",
+          "to_room": "overgrown courtyard"
+        },
+        {
+          "from_room": "overgrown courtyard",
+          "action": "ruined temple",
+          "to_room": "the ruined temple"
+        },
+        {
+          "from_room": "the ruined temple",
+          "action": "stairs down",
+          "to_room": "antechamber"
+        }
+      ],
+      "updated_ts": 1776335444
+    },
+    "cliff by the coast": {
+      "hops": {
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776352882,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776352882,
+          "learned_from_role": "runner"
+        },
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "dark cell": {
+          "action": "root-covered wall",
+          "to_room": "underground passages",
+          "updated_ts": 1776296202,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "protruding ledge",
+          "action": "hole into cliff",
+          "to_room": "underground passages"
+        },
+        {
+          "from_room": "underground passages",
+          "action": "climb the chain",
+          "to_room": "cliff by the coast"
+        }
+      ],
+      "updated_ts": 1776352882
+    },
+    "protruding ledge": {
+      "hops": {
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776294875,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "underground passages",
+          "action": "climb the chain",
+          "to_room": "cliff by the coast"
+        }
+      ],
+      "updated_ts": 1776352882
+    },
+    "underground passages": {
+      "hops": {
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776352882,
+          "learned_from_role": "runner"
+        },
+        "intro": {
+          "action": "begin adventure",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776171198,
+          "learned_from_role": "runner"
+        },
+        "dark cell": {
+          "action": "root-covered wall",
+          "to_room": "underground passages",
+          "updated_ts": 1776296202,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776294875,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "protruding ledge",
+          "action": "hole into cliff",
+          "to_room": "underground passages"
+        }
+      ],
+      "updated_ts": 1776352882
+    },
+    "dark cell": {
+      "hops": {
+        "protruding ledge": {
+          "action": "hole into cliff",
+          "to_room": "underground passages",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "underground passages": {
+          "action": "climb the chain",
+          "to_room": "cliff by the coast",
+          "updated_ts": 1776334644,
+          "learned_from_role": "runner"
+        },
+        "cliff by the coast": {
+          "action": "old bridge",
+          "to_room": "the old bridge",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "the old bridge": {
+          "action": "east",
+          "to_room": "ruined gatehouse",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "ruined gatehouse": {
+          "action": "standing archway",
+          "to_room": "along inner wall",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "along inner wall": {
+          "action": "overgrown courtyard",
+          "to_room": "overgrown courtyard",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "overgrown courtyard": {
+          "action": "ruined temple",
+          "to_room": "the ruined temple",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "the ruined temple": {
+          "action": "stairs down",
+          "to_room": "antechamber",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        },
+        "antechamber": {
+          "action": "blue bird tomb",
+          "to_room": "dark cell",
+          "updated_ts": 1776335444,
+          "learned_from_role": "runner"
+        }
+      },
+      "latest_success_path": [
+        {
+          "from_room": "cliff by the coast",
+          "action": "old bridge",
+          "to_room": "the old bridge"
+        },
+        {
+          "from_room": "the old bridge",
+          "action": "east",
+          "to_room": "ruined gatehouse"
+        },
+        {
+          "from_room": "ruined gatehouse",
+          "action": "standing archway",
+          "to_room": "along inner wall"
+        },
+        {
+          "from_room": "along inner wall",
+          "action": "overgrown courtyard",
+          "to_room": "overgrown courtyard"
+        },
+        {
+          "from_room": "overgrown courtyard",
+          "action": "ruined temple",
+          "to_room": "the ruined temple"
+        },
+        {
+          "from_room": "the ruined temple",
+          "action": "stairs down",
+          "to_room": "antechamber"
+        },
+        {
+          "from_room": "antechamber",
+          "action": "blue bird tomb",
+          "to_room": "dark cell"
+        }
+      ],
+      "updated_ts": 1776335444
+    }
+  }
+}

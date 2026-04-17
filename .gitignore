@@ -1,0 +1,50 @@
+# Python and editor noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.vscode/
+
+# Local virtual environments and vendored binaries
+venv/
+mygame/venv/
+llama-cli
+qwen3.5_4b.gguf
+
+# Local git backup and scratch files
+git_backup/
+*.lock
+*.tmp
+
+# Runtime artifacts and logs
+*.log
+artifacts/current/**
+artifacts/archive/**
+!artifacts/README.md
+!artifacts/archive/
+!artifacts/archive/legacy-mygame-workflow/
+!artifacts/archive/legacy-mygame-workflow/README.md
+mygame/server/logs/
+mygame/server/*.pid
+mygame/server/.static/
+mygame/mygamename/
+mygame/wagent_*.json
+
+# Local account pools and generated memories
+wagent_account_pool*.json
+!wagent_account_pool.example.json
+wagent_*_observation_memory.json
+wagent_*_run_memory.json
+wagent_observation_memory.json
+wagent_run_memory.json
+wagent_orchestrator_summary.json
+
+# Legacy local experiment scripts outside the public workflow
+doubao.py
+gemini.py
+seeker.py
+test_prompt.txt
+mygame/test_prompt.txt
+mygame/next_prompt.txt
+mygame/json_seeker.gbnf
