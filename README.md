@@ -84,7 +84,7 @@ Or use:
 ```
 
 That script creates `venv/` if needed, installs Python dependencies including Evennia, then runs the initial Evennia bootstrap tasks inside `mygame/`.
-It also creates the local Evennia runtime directories and a local `server/conf/secret_settings.py` stub when they are missing in a fresh checkout.
+It also creates the local Evennia runtime directories, writes a local `server/conf/secret_settings.py` stub when needed, and auto-generates `wagent_account_pool.local.json` unless you already supplied explicit credentials or a custom account-pool path.
 
 If you already have your own Evennia game directory, you can use it instead:
 
@@ -92,10 +92,11 @@ If you already have your own Evennia game directory, you can use it instead:
 WAGENT_GAME_DIR=/path/to/your/game ./start_evennia.sh
 ```
 
-2. Configure local credentials and model access.
+2. Configure model access.
 
 - Review `.env.example`
-- Keep real credentials in exported environment variables or `wagent_account_pool.local.json`
+- `./start_evennia.sh` auto-creates `wagent_account_pool.local.json` by default
+- Keep real credentials in exported environment variables or a local account-pool file if you want to override that default
 - Use `wagent_account_pool.example.json` only as a template
 
 3. Start Evennia from the repository checkout.
@@ -135,6 +136,8 @@ python bots.py
 ```
 
 For the full setup path, model-provider examples, and account-pool generation flow, see [docs/quickstart.md](docs/quickstart.md).
+
+The cold-start orchestrator script for isolated autonomous-mapping proofs lives at `./run_autonomous_mapping_proof.sh` in the repository root.
 
 ## Project Layout
 

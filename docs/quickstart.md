@@ -50,7 +50,7 @@ Or just run:
 ```
 
 That script creates `venv/` if needed, installs Evennia and the other Python dependencies, and runs the initial Evennia bootstrap commands.
-It also recreates local Evennia runtime directories such as `server/logs/` and writes a local `server/conf/secret_settings.py` stub when those files are missing from a fresh clone.
+It also recreates local Evennia runtime directories such as `server/logs/`, writes a local `server/conf/secret_settings.py` stub when those files are missing from a fresh clone, and auto-generates `wagent_account_pool.local.json` unless you already supplied explicit credentials or a custom account-pool path.
 
 If you already have your own Evennia game directory, use:
 
@@ -102,9 +102,9 @@ Do not commit real credentials.
 
 Use one of these options locally:
 
-1. Export `EVENNIA_USER` and `EVENNIA_PASS`.
-2. Create `wagent_account_pool.local.json` from `wagent_account_pool.example.json`.
-3. Generate a pool file with:
+1. Default path: let `./start_evennia.sh` create `wagent_account_pool.local.json` for you.
+2. Override path: export `EVENNIA_USER` and `EVENNIA_PASS`.
+3. Multi-account override: create your own local account-pool file from `wagent_account_pool.example.json` or generate one with:
 
 ```bash
 python provision_account_pool.py --pool-file wagent_account_pool.local.json --count 2
@@ -185,6 +185,8 @@ python runner.py --target-room "corner of castle ruins"
 ```
 
 Role-specific wrappers such as `bridge_runner.py` and `target_scanner.py` are also valid public entrypoints.
+
+For an isolated cold-start orchestration run that starts from empty shared map and route memory, use `./run_autonomous_mapping_proof.sh --account-pool-file wagent_account_pool.local.json` from the repository root.
 
 ## 6. Repository Rules
 
