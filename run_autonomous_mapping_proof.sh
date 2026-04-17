@@ -4,7 +4,11 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VENV_PYTHON="${SCRIPT_DIR}/venv/bin/python"
 PROOF_NAME="cold_start_proof_$(date +%Y%m%d_%H%M%S)"
-ACCOUNT_POOL_FILE="${WAGENT_ACCOUNT_POOL_FILE:-}"
+GAME_DIR_INPUT="${WAGENT_GAME_DIR:-${SCRIPT_DIR}/mygame}"
+ACCOUNT_POOL_FILE="${WAGENT_ACCOUNT_POOL_FILE:-wagent_account_pool.local.json}"
+ACCOUNT_POOL_COUNT="${WAGENT_ACCOUNT_POOL_COUNT:-2}"
+ACCOUNT_POOL_HOST="${WAGENT_EVENNIA_HOST:-127.0.0.1}"
+ACCOUNT_POOL_PORT="${WAGENT_EVENNIA_PORT:-4000}"
 RUNNER_TARGET_ROOM=""
 SCANNER_TARGET_ROOM=""
 MAX_PHASES="12"
@@ -18,18 +22,18 @@ SCANNER_STUCK_TURNS="6"
 usage() {
     cat <<'EOF'
 Usage:
-  ./run_autonomous_mapping_proof.sh --account-pool-file PATH [options]
+    ./run_autonomous_mapping_proof.sh [options]
 
 Purpose:
   Run an isolated cold-start proof where shared map truth, route memory, and
   experience memory all start empty. This demonstrates autonomous map growth,
   not replay on the repository's baseline shared map.
 
-Required:
-  --account-pool-file PATH     Account pool JSON with at least two accounts.
-
 Optional:
-  --proof-name NAME            Output folder name under artifacts/current/
+    --account-pool-file PATH     Account pool JSON path. Defaults to
+                                                             WAGENT_ACCOUNT_POOL_FILE or
+                                                             ./wagent_account_pool.local.json
+    --proof-name NAME            Output folder name under artifacts/current/
   --runner-target-room ROOM    Initial runner target room
   --scanner-target-room ROOM   Fallback scanner target room
   --max-phases N               Orchestrator max phases (default: 12)
@@ -43,7 +47,6 @@ Optional:
 
 Example:
   ./run_autonomous_mapping_proof.sh \
-    --account-pool-file wagent_account_pool.local.json \
     --runner-target-room "corner of castle ruins" \
     --scanner-target-room "corner of castle ruins" \
     --proof-name obelisk_cold_start
@@ -108,14 +111,20 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-if [[ -z "${ACCOUNT_POOL_FILE}" ]]; then
-    echo "Missing required --account-pool-file" >&2
-    usage >&2
+if [[ ! -x "${VENV_PYTHON}" ]]; then
+    echo "Python venv not found at ${VENV_PYTHON}. Run ./start_evennia.sh first." >&2
     exit 1
 fi
 
-if [[ ! -x "${VENV_PYTHON}" ]]; then
-    echo "Python venv not found at ${VENV_PYTHON}. Run ./start_evennia.sh first." >&2
+if [[ "${GAME_DIR_INPUT}" = /* ]]; then
+    GAME_DIR="${GAME_DIR_INPUT}"
+else
+    GAME_DIR="${SCRIPT_DIR}/${GAME_DIR_INPUT}"
+fi
+
+if [[ ! -f "${GAME_DIR}/server/conf/settings.py" ]]; then
+    echo "Could not locate Evennia game directory at ${GAME_DIR}" >&2
+    echo "Set WAGENT_GAME_DIR before running the cold-start proof if you are not using ./mygame." >&2
     exit 1
 fi
 
@@ -126,8 +135,13 @@ else
 fi
 
 if [[ ! -f "${ACCOUNT_POOL_PATH}" ]]; then
-    echo "Account pool file not found: ${ACCOUNT_POOL_PATH}" >&2
-    exit 1
+    echo "Provisioning local Evennia account pool for proof run: ${ACCOUNT_POOL_PATH}"
+    "${VENV_PYTHON}" "${SCRIPT_DIR}/provision_account_pool.py" \
+        --game-dir "${GAME_DIR}" \
+        --pool-file "${ACCOUNT_POOL_PATH}" \
+        --count "${ACCOUNT_POOL_COUNT}" \
+        --host "${ACCOUNT_POOL_HOST}" \
+        --port "${ACCOUNT_POOL_PORT}"
 fi
 
 PROOF_DIR="${SCRIPT_DIR}/artifacts/current/${PROOF_NAME}"

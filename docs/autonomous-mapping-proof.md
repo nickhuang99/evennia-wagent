@@ -98,11 +98,12 @@ This repository now includes a dedicated proof runner:
 
 ```bash
 ./run_autonomous_mapping_proof.sh \
-	--account-pool-file wagent_account_pool.local.json \
 	--runner-target-room "corner of castle ruins" \
 	--scanner-target-room "corner of castle ruins" \
 	--proof-name obelisk_cold_start
 ```
+
+By default it uses `WAGENT_ACCOUNT_POOL_FILE` or `./wagent_account_pool.local.json`. If that pool file does not exist yet, the script auto-creates a fresh local Evennia account pool before starting the proof.
 
 What it does:
 

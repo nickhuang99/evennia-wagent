@@ -186,7 +186,7 @@ python runner.py --target-room "corner of castle ruins"
 
 Role-specific wrappers such as `bridge_runner.py` and `target_scanner.py` are also valid public entrypoints.
 
-For an isolated cold-start orchestration run that starts from empty shared map and route memory, use `./run_autonomous_mapping_proof.sh --account-pool-file wagent_account_pool.local.json` from the repository root.
+For an isolated cold-start orchestration run that starts from empty shared map and route memory, use `./run_autonomous_mapping_proof.sh` from the repository root. It reuses `WAGENT_ACCOUNT_POOL_FILE` or `./wagent_account_pool.local.json`, and auto-creates that local pool file if it does not exist yet.
 
 ## 6. Repository Rules
 
