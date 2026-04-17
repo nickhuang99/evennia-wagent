@@ -1,8 +1,79 @@
 # Evennia Wagent
 
-Wagent is an Evennia-based MUD exploration workflow with separate scanner and runner roles, shared map memory, and pluggable local or cloud LLM backends.
+Wagent is an Evennia-based MUD exploration workflow for driving scanner and runner agents through a text world, capturing shared map knowledge, and coordinating local puzzle probing with durable route confirmation.
 
-If you are opening this repository for the first time, start with `docs/quickstart.md`.
+It is built around a simple division of labor: scanners discover and probe, runners confirm and promote stable truth. The workflow can use local Ollama models or OpenAI-compatible cloud APIs through the same configuration surface.
+
+For a full first-run setup, start with [docs/quickstart.md](docs/quickstart.md).
+
+## About
+
+This repository contains two things:
+
+- the live Wagent workflow at the repository root
+- the Evennia game directory in `mygame/`
+
+The default setup installs Evennia from `requirements.txt`, so a fresh checkout can run without restoring an old local environment. If you prefer a source checkout later, you can place the Evennia upstream repository at `vendor/evennia` and the bootstrap script will use it automatically.
+
+## Features
+
+- Separate scanner and runner roles instead of a single monolithic bot
+- Shared map and route memory for confirmed navigation knowledge
+- Local observation memory for scanner-side evidence that has not been promoted yet
+- Provider-agnostic model calls with support for Ollama and OpenAI-compatible chat endpoints
+- Portable repository-relative bootstrap via `start_evennia.sh`
+- Public-repo-safe examples for environment variables and account-pool setup
+
+## Quick Start
+
+1. Create a Python environment and install dependencies.
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+Or use:
+
+```bash
+./start_evennia.sh
+```
+
+2. Configure local credentials and model access.
+
+- Review `.env.example`
+- Keep real credentials in exported environment variables or `wagent_account_pool.local.json`
+- Use `wagent_account_pool.example.json` only as a template
+
+3. Start Evennia from the repository checkout.
+
+```bash
+cd mygame
+evennia migrate
+evennia collectstatic --noinput
+evennia start
+```
+
+4. Run the workflow from the repository root.
+
+```bash
+python bots.py
+python scanner.py --target-room "corner of castle ruins"
+python runner.py --target-room "corner of castle ruins"
+```
+
+For the full setup path, model-provider examples, and account-pool generation flow, see [docs/quickstart.md](docs/quickstart.md).
+
+## Project Layout
+
+- `scanner.py`, `runner.py`, and `bots.py` are the canonical workflow entrypoints
+- top-level `*_runner.py` and `*_scanner.py` files are helper launchers for specific tasks
+- `mygame/` is the Evennia game directory, not the source of truth for the live workflow
+- `artifacts/` holds retained outputs, archive material, and recovery data
+
+## Recovery And Handoff
 
 If you are resuming after a crash or taking over from another model, continue with the recovery-oriented sections below.
 
