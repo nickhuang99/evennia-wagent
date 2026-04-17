@@ -1,4 +1,6 @@
-# Wagent Workflow Handoff
+# Evennia Wagent
+
+Wagent is an Evennia-based MUD exploration workflow with separate scanner and runner roles, shared map memory, and pluggable local or cloud LLM backends.
 
 If you are opening this repository for the first time, start with `docs/quickstart.md`.
 
