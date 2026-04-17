@@ -92,6 +92,50 @@ The proof artifact should answer four questions:
 - what did the runner confirm?
 - what changed in shared truth afterward?
 
+## Cold-Start Proof Script
+
+This repository now includes a dedicated proof runner:
+
+```bash
+./run_autonomous_mapping_proof.sh \
+	--account-pool-file wagent_account_pool.local.json \
+	--runner-target-room "corner of castle ruins" \
+	--scanner-target-room "corner of castle ruins" \
+	--proof-name obelisk_cold_start
+```
+
+What it does:
+
+- creates an isolated proof directory under `artifacts/current/`
+- starts from an empty shared map file
+- starts from an empty shared route-memory file
+- starts from an empty shared experience-memory file
+- runs `bots.py` against those empty proof files instead of the repository baseline memory
+
+This is the right shape of proof because it prevents the system from silently reusing the normal checked-in shared map and route table.
+
+## What To Inspect After The Run
+
+After the proof run, inspect:
+
+- the proof map JSON
+- the proof route-memory JSON
+- the proof summary JSON
+- the orchestrator log
+
+Success means those isolated proof files gained genuine confirmed edges or rooms that were absent at the start.
+
+## Important Caveat
+
+Do not promise that a single cold-start run will fully reconstruct the entire world map.
+
+That is a much stronger claim than the current system is designed to guarantee. The honest proof target is this instead:
+
+- starting from empty or incomplete shared truth
+- the system can grow the confirmed map by discovering and confirming previously unknown transitions
+
+That is already enough to prove the core capability.
+
 ## Recommended Success Metrics
 
 Prefer these metrics when describing system performance:

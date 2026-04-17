@@ -44,6 +44,8 @@ If the map is already fully written, then a simple blind-traversal script can re
 
 If you want to demonstrate that capability rather than just route replay, see [docs/autonomous-mapping-proof.md](docs/autonomous-mapping-proof.md).
 
+For an isolated cold-start proof that ignores the repository baseline map and route files, run `./run_autonomous_mapping_proof.sh --account-pool-file wagent_account_pool.local.json ...`.
+
 ## Model Guidance
 
 - Known-good baseline: `qwen2.5:7b` via Ollama
@@ -211,6 +213,7 @@ If any of those are no longer true, update `docs/current-state.md`, `docs/recove
 
 - `docs/quickstart.md`: first-run setup, credentials, model provider configuration, and launch commands
 - `docs/autonomous-mapping-proof.md`: what counts as real autonomous mapping, and how to demonstrate it honestly
+- `run_autonomous_mapping_proof.sh`: isolated cold-start proof runner using empty shared map/route/experience files
 - `model_sanity_check.py`: connectivity and JSON-output sanity check for a candidate model endpoint
 - `docs/architecture.md`: current system model and workflow
 - `docs/development-principles.md`: what to do and what not to do when modifying the system
