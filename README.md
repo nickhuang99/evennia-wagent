@@ -11,15 +11,18 @@ For a full first-run setup, start with [docs/quickstart.md](docs/quickstart.md).
 This repository contains two things:
 
 - the live Wagent workflow at the repository root
-- the Evennia game directory in `mygame/`
+- a bundled default Evennia game directory in `mygame/`
 
 Wagent does depend on Evennia. The default setup installs Evennia from `requirements.txt`, so a fresh checkout can run without separately cloning the Evennia source repository. If you prefer a source checkout later, you can place the Evennia upstream repository at `vendor/evennia` and the bootstrap script will use it automatically.
+
+The bundled `mygame/` directory is there to make this repository runnable out of the box. It is not a hard architectural requirement for the workflow itself. If a user already has an Evennia game directory, they can point the bootstrap helpers at that directory instead of using `mygame/`.
 
 ## Dependency Model
 
 - Required dependency: `evennia`
 - Default install path: install `evennia==4.5.0` from `requirements.txt`
 - Optional advanced path: place an Evennia source checkout at `vendor/evennia` and `start_evennia.sh` will install it in editable mode
+- Optional runtime path: use `WAGENT_GAME_DIR=/path/to/game ./start_evennia.sh` to bootstrap against an existing Evennia game directory
 
 If you only want to run this project, you do not need to clone Evennia separately.
 
@@ -50,6 +53,12 @@ Or use:
 ```
 
 That script creates `venv/` if needed, installs Python dependencies including Evennia, then runs the initial Evennia bootstrap tasks inside `mygame/`.
+
+If you already have your own Evennia game directory, you can use it instead:
+
+```bash
+WAGENT_GAME_DIR=/path/to/your/game ./start_evennia.sh
+```
 
 2. Configure local credentials and model access.
 
@@ -92,7 +101,7 @@ For the full setup path, model-provider examples, and account-pool generation fl
 
 - `scanner.py`, `runner.py`, and `bots.py` are the canonical workflow entrypoints
 - top-level `*_runner.py` and `*_scanner.py` files are helper launchers for specific tasks
-- `mygame/` is the Evennia game directory, not the source of truth for the live workflow
+- `mygame/` is the bundled default Evennia game directory, not the source of truth for the live workflow
 - `artifacts/` holds retained outputs, archive material, and recovery data
 
 ## Recovery And Handoff

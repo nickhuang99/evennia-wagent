@@ -23,7 +23,11 @@ def default_accounts(count):
 
 
 def detect_game_dir(base_dir):
-    candidates = [base_dir / "mygame", base_dir]
+    env_game_dir = os.getenv("WAGENT_GAME_DIR", "").strip()
+    candidates = []
+    if env_game_dir:
+        candidates.append(Path(env_game_dir).expanduser())
+    candidates.extend([base_dir / "mygame", base_dir])
     for candidate in candidates:
         if (candidate / "server" / "conf" / "settings.py").exists():
             return candidate
@@ -75,7 +79,7 @@ def parse_args():
     parser.add_argument("--count", type=int, default=2)
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=4000)
-    parser.add_argument("--game-dir", default="")
+    parser.add_argument("--game-dir", default="", help="Evennia game directory. Defaults to WAGENT_GAME_DIR, ./mygame, or the current base directory.")
     return parser.parse_args()
 
 

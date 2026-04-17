@@ -2,17 +2,20 @@
 
 ## What This Repo Contains
 
-This repository tracks the Wagent workflow and the Evennia game directory at `mygame/`.
+This repository tracks the Wagent workflow and includes a bundled default Evennia game directory at `mygame/`.
 
 Wagent does depend on Evennia, but it does not vendor the Evennia engine by default. The default bootstrap path installs `evennia` from `requirements.txt` so a fresh checkout can work without separately cloning the Evennia source repository.
 
 If you prefer a vendored Evennia source checkout later, place the upstream repository at `vendor/evennia` as a git submodule or editable checkout. `start_evennia.sh` will install it automatically when that directory exists.
+
+The bundled `mygame/` directory is for the default runnable setup. If you already have an Evennia game directory, you can reuse it instead of the bundled one.
 
 ## Dependency Summary
 
 - Required runtime dependency: `evennia`
 - Default install source: `requirements.txt`
 - Optional advanced source checkout: `vendor/evennia`
+- Optional game directory override: `WAGENT_GAME_DIR=/path/to/game`
 
 If your goal is only to run this project, the normal path is to clone this repository and install dependencies here. A separate Evennia git checkout is optional, not required.
 
@@ -34,6 +37,12 @@ Or just run:
 ```
 
 That script creates `venv/` if needed, installs Evennia and the other Python dependencies, and runs the initial Evennia bootstrap commands.
+
+If you already have your own Evennia game directory, use:
+
+```bash
+WAGENT_GAME_DIR=/path/to/your/game ./start_evennia.sh
+```
 
 For a minimal first run after checkout:
 
@@ -58,7 +67,7 @@ evennia collectstatic --noinput
 evennia start
 ```
 
-The bundled `mygame/` directory is the game directory generated for Evennia. The live Wagent workflow remains in the repository root.
+The bundled `mygame/` directory is the default Evennia game directory shipped with this repository. The live Wagent workflow remains in the repository root and can also target another Evennia game directory when you set `WAGENT_GAME_DIR`.
 
 ## 3. Configure Credentials
 
@@ -73,6 +82,8 @@ Use one of these options locally:
 ```bash
 python provision_account_pool.py --pool-file wagent_account_pool.local.json --count 2
 ```
+
+If you are not using the bundled `mygame/`, add `--game-dir /path/to/your/game` or export `WAGENT_GAME_DIR` first.
 
 `wagent_account_pool.local.json` is gitignored on purpose.
 
