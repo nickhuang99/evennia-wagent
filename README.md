@@ -84,6 +84,7 @@ Or use:
 ```
 
 That script creates `venv/` if needed, installs Python dependencies including Evennia, then runs the initial Evennia bootstrap tasks inside `mygame/`.
+It also creates the local Evennia runtime directories and a local `server/conf/secret_settings.py` stub when they are missing in a fresh checkout.
 
 If you already have your own Evennia game directory, you can use it instead:
 

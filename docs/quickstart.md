@@ -50,6 +50,7 @@ Or just run:
 ```
 
 That script creates `venv/` if needed, installs Evennia and the other Python dependencies, and runs the initial Evennia bootstrap commands.
+It also recreates local Evennia runtime directories such as `server/logs/` and writes a local `server/conf/secret_settings.py` stub when those files are missing from a fresh clone.
 
 If you already have your own Evennia game directory, use:
 

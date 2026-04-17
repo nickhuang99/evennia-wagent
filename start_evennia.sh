@@ -20,6 +20,15 @@ if [ ! -f "${GAME_DIR}/server/conf/settings.py" ]; then
     exit 1
 fi
 
+mkdir -p "${GAME_DIR}/server/logs" "${GAME_DIR}/server/.static" "${GAME_DIR}/server/.media"
+if [ ! -f "${GAME_DIR}/server/conf/secret_settings.py" ]; then
+    cat > "${GAME_DIR}/server/conf/secret_settings.py" <<'EOF'
+# Local Evennia overrides live here.
+# This file is intentionally created by start_evennia.sh so a fresh checkout
+# can bootstrap without warning about a missing secret_settings module.
+EOF
+fi
+
 if [ ! -d "${VENV_DIR}" ]; then
     echo "Creating virtual environment at ${VENV_DIR}"
     python3 -m venv "${VENV_DIR}"
