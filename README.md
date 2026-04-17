@@ -13,7 +13,15 @@ This repository contains two things:
 - the live Wagent workflow at the repository root
 - the Evennia game directory in `mygame/`
 
-The default setup installs Evennia from `requirements.txt`, so a fresh checkout can run without restoring an old local environment. If you prefer a source checkout later, you can place the Evennia upstream repository at `vendor/evennia` and the bootstrap script will use it automatically.
+Wagent does depend on Evennia. The default setup installs Evennia from `requirements.txt`, so a fresh checkout can run without separately cloning the Evennia source repository. If you prefer a source checkout later, you can place the Evennia upstream repository at `vendor/evennia` and the bootstrap script will use it automatically.
+
+## Dependency Model
+
+- Required dependency: `evennia`
+- Default install path: install `evennia==4.5.0` from `requirements.txt`
+- Optional advanced path: place an Evennia source checkout at `vendor/evennia` and `start_evennia.sh` will install it in editable mode
+
+If you only want to run this project, you do not need to clone Evennia separately.
 
 ## Features
 
@@ -41,6 +49,8 @@ Or use:
 ./start_evennia.sh
 ```
 
+That script creates `venv/` if needed, installs Python dependencies including Evennia, then runs the initial Evennia bootstrap tasks inside `mygame/`.
+
 2. Configure local credentials and model access.
 
 - Review `.env.example`
@@ -62,6 +72,18 @@ evennia start
 python bots.py
 python scanner.py --target-room "corner of castle ruins"
 python runner.py --target-room "corner of castle ruins"
+```
+
+In other words, the normal first-run path after `git clone` is:
+
+```bash
+git clone git@github.com:nickhuang99/evennia-wagent.git
+cd evennia-wagent
+./start_evennia.sh
+cd mygame && ../venv/bin/evennia start
+cd ..
+source venv/bin/activate
+python bots.py
 ```
 
 For the full setup path, model-provider examples, and account-pool generation flow, see [docs/quickstart.md](docs/quickstart.md).

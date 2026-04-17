@@ -4,9 +4,17 @@
 
 This repository tracks the Wagent workflow and the Evennia game directory at `mygame/`.
 
-It does not vendor the Evennia engine by default. The default bootstrap path installs `evennia` from `requirements.txt` so a fresh checkout can work without restoring an old local environment.
+Wagent does depend on Evennia, but it does not vendor the Evennia engine by default. The default bootstrap path installs `evennia` from `requirements.txt` so a fresh checkout can work without separately cloning the Evennia source repository.
 
 If you prefer a vendored Evennia source checkout later, place the upstream repository at `vendor/evennia` as a git submodule or editable checkout. `start_evennia.sh` will install it automatically when that directory exists.
+
+## Dependency Summary
+
+- Required runtime dependency: `evennia`
+- Default install source: `requirements.txt`
+- Optional advanced source checkout: `vendor/evennia`
+
+If your goal is only to run this project, the normal path is to clone this repository and install dependencies here. A separate Evennia git checkout is optional, not required.
 
 ## 1. Create a Python Environment
 
@@ -23,6 +31,21 @@ Or just run:
 
 ```bash
 ./start_evennia.sh
+```
+
+That script creates `venv/` if needed, installs Evennia and the other Python dependencies, and runs the initial Evennia bootstrap commands.
+
+For a minimal first run after checkout:
+
+```bash
+git clone git@github.com:nickhuang99/evennia-wagent.git
+cd evennia-wagent
+./start_evennia.sh
+cd mygame
+../venv/bin/evennia start
+cd ..
+source venv/bin/activate
+python bots.py
 ```
 
 ## 2. Bootstrap Evennia
